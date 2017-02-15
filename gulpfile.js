@@ -7,6 +7,8 @@ var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 var rename = require('gulp-rename');
 
+const imagemin = require('gulp-imagemin');
+
 gulp.task('workflow', function () {
     gulp.src('./src/scss/**/*.scss')
         .pipe(sourcemaps.init())
@@ -30,4 +32,7 @@ gulp.task('workflow', function () {
 //Watch task
 gulp.task('default', function () {
   gulp.watch('./src/scss/**/*.scss', ['workflow']);
+  //gulp.src('src/img/*')
+     //   .pipe(imagemin())
+     // .pipe(gulp.dest('dist/img'))
 });
